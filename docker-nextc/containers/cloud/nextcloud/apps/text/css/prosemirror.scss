@@ -1,0 +1,197 @@
+/* Document rendering styles */
+#editor-wrapper .ProseMirror {
+	margin-top: 44px;
+	height: 100%;
+	position: relative;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	-webkit-font-variant-ligatures: none;
+	font-variant-ligatures: none;
+	padding: 4px 8px 200px 14px;
+	line-height: 150%;
+	font-size: 14px;
+	outline: none;
+
+	p:first-child,
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child {
+		margin-top: 10px;
+	}
+
+	a {
+		color: var(--color-primary-element);
+		text-decoration: underline;
+		padding: .5em 0;
+	}
+
+	p {
+		margin-bottom: 1em;
+		line-height: 150%;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h4 {
+		font-size: 21px;
+	}
+
+	h5 {
+		font-size: 17px;
+	}
+
+	h6 {
+		font-size: 14px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 600;
+		line-height: 120%;
+		margin-top: 24px;
+		margin-bottom: 12px;
+		color: var(--color-main-text);
+	}
+
+	img {
+		cursor: default;
+		max-width: 100%;
+	}
+
+	hr {
+		padding: 2px 0;
+		border: none;
+		margin: 1em 0;
+		width: 100%;
+	}
+
+	hr:after {
+		content: "";
+		display: block;
+		height: 1px;
+		background-color: var(--color-border-dark);
+		line-height: 2px;
+	}
+
+	pre {
+		white-space: pre-wrap;
+		background-color: var(--color-background-dark);
+		border-radius: var(--border-radius);
+		padding: 1em 1.3em;
+		margin-bottom: 1em;
+	}
+
+	p code {
+		background-color: var(--color-background-dark);
+		border-radius: var(--border-radius);
+		padding: .1em .3em;
+	}
+
+	li {
+		position: relative;
+	}
+
+	ul, ol {
+		padding-left: 14px;
+	}
+
+	ul li {
+		list-style-type: disc;
+	}
+
+	blockquote {
+		padding-left: 1em;
+		border-left: 4px solid var(--color-primary-element);
+		color: var(--color-text-maxcontrast);
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+}
+
+.ProseMirror-focused .ProseMirror-gapcursor {
+	display: block;
+}
+#editor-wrapper:not(.richEditor) .ProseMirror {
+	pre {
+		background-color: var(--color-main-background);
+
+		&::before {
+			content: attr(data-language);
+			text-transform: uppercase;
+			display: block;
+			text-align: right;
+			font-weight: bold;
+			font-size: 0.6rem;
+		}
+		code {
+			.hljs-comment,
+			.hljs-quote {
+				color: #999999;
+			}
+			.hljs-variable,
+			.hljs-template-variable,
+			.hljs-attribute,
+			.hljs-tag,
+			.hljs-name,
+			.hljs-regexp,
+			.hljs-link,
+			.hljs-name,
+			.hljs-selector-id,
+			.hljs-selector-class {
+				color: #f2777a;
+			}
+			.hljs-number,
+			.hljs-meta,
+			.hljs-built_in,
+			.hljs-builtin-name,
+			.hljs-literal,
+			.hljs-type,
+			.hljs-params {
+				color: #f99157;
+			}
+			.hljs-string,
+			.hljs-symbol,
+			.hljs-bullet {
+				color: #99cc99;
+			}
+			.hljs-title,
+			.hljs-section {
+				color: #ffcc66;
+			}
+			.hljs-keyword,
+			.hljs-selector-tag {
+				color: #6699cc;
+			}
+			.hljs-emphasis {
+				font-style: italic;
+			}
+			.hljs-strong {
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+

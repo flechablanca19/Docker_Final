@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  nextcloud:
+    container_name: nextcloud
+    restart: always
+    image: nextcloud
+    ports:
+      - 80:80
+    volumes:
+      - ./containers/cloud/nextcloud/apps:/var/www/html/apps
+      - ./containers/cloud/nextcloud/config:/var/www/html/config
+      - ./containers/cloud/nextcloud/data:/var/www/html/data
+    depends_on:
+      - db
+
+  db:
+    container_name: maria-db
+    restart: always
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ncdb
+      MYSQL_USER: nextcloud
+      MYSQL_PASSWORD: nextcloud
+    volumes:
+      - ./containers/cloud/mariadb:/var/lib/mysql
+    ports:
+      - 8081:8081
+#ERROR DEL PUERTO 8081 INTENCIONAL/DESCUIDO
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
