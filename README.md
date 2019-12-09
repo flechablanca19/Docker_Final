@@ -26,6 +26,7 @@ HAproxy
 V.3
 wordpress
 mysql:8.0
+
 adminer
 [OffLine]
 
