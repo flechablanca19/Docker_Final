@@ -11,14 +11,17 @@ nextcloud
 mariadb
 adminer
 [Online]
+
 2)
 V.3
 Kalilinux
 [Live]
+
 3)
 V.3
 HAproxy
 [OffLine]
+
 4)
 V.3
 wordpress
